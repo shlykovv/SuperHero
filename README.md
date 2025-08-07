@@ -121,13 +121,13 @@ Content-Type: application/json
 
 ```
 SuperHero/
+├── backend/            # Конфигурация Django
 ├── heroes/               # Приложение heroes
 │   ├── models.py         # Модель HeroModel
 │   ├── views.py          # APIView с GET и POST
 │   ├── serializers.py
-│   └── tests/
-│       └── test_hero_api.py
-├── SuperHero/            # Конфигурация Django
+├── tests/
+│   └── test_hero_api.py
 ├── manage.py
 ├── Dockerfile
 ├── docker-compose.yml
