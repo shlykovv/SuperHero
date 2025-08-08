@@ -59,14 +59,12 @@ def test_get_hero_not_found(api_client):
 def test_post_created_hero(api_client):
     response = api_client.post('/hero/', {'name': 'Batman'})
     assert response.status_code == status.HTTP_201_CREATED
-    print(response.data)
     assert response.json()['strength'] == 40
 
 
 @pytest.mark.django_db
 def test_post_hero_already_exists(api_client, hero_instance):
     response = api_client.post('/hero/', {'name': 'Batman'})
-    print(response.data)
     assert response.status_code == status.HTTP_200_OK
     assert response.json()['detail'] == 'Hero already exists'
 
